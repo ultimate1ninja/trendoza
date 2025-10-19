@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Trendenza | Fashion for All</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+  <style>
+    body {
+      background-color: #fff;
+      color: #222;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    header img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    .grid img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    h2, h3 {
+      color: #222;
+    }
+    figure {
+      margin: 0;
+    }
+    nav ul li strong {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+    }
+    footer {
+      margin-top: 2rem;
+      text-align: center;
+      color: #777;
+    }
+    .subscribe {
+      text-align: center;
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="container-fluid">
+    <ul>
+      <li><strong>Trendenza</strong></li>
+    </ul>
+    <ul>
+      <li><a href="#">Men</a></li>
+      <li><a href="#">Women</a></li>
+      <li><a href="#">New Arrivals</a></li>
+      <li><a href="#" role="button">Shop Now</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <main class="container">
+    <div class="grid">
+      <section>
+        <hgroup>
+          <h2>Welcome to Trendenza</h2>
+          <h3>Where Modern Meets Classy</h3>
+        </hgroup>
+        <p>Explore a world of sleek, stylish, and trend-forward fashion — designed for confidence and individuality.</p>
+        <figure>
+          <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-R6mVhM7gh3UbGOqZR9EkHdqy/user-H6j9GpEw2cQjM2xZxUfsPfAi/img-6663d903-c3ac-4ab4-bb72-b36432495cba-0.png?st=2025-10-19T20%3A15%3A00Z&se=2025-10-20T20%3A15%3A00Z&sp=r&sv=2022-11-02&sr=b&rscd=inline%3B%20filename%3Dtrendenza-hero.png" alt="Trendenza fashion banner">
+          <figcaption><a href="#" target="_blank">Shop the Look</a></figcaption>
+        </figure>
+
+        <h3>Our Vision</h3>
+        <p>At Trendenza, we blend timeless elegance with bold, contemporary design. From everyday essentials to standout pieces, we bring comfort and sophistication to your wardrobe.</p>
+
+        <h3>Featured Collection</h3>
+        <p>Discover the latest looks for Men, Women, and New Arrivals — handpicked for the modern fashion enthusiast.</p>
+
+        <div class="grid">
+          <figure>
+            <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=800&q=80" alt="Men’s fashion outfit">
+            <figcaption><a href="#" target="_blank">Men’s Collection</a></figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1520974722078-364a43a1036e?auto=format&fit=crop&w=800&q=80" alt="Women’s fashion look">
+            <figcaption><a href="#" target="_blank">Women’s Collection</a></figcaption>
+          </figure>
+          <figure>
+            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80" alt="New arrivals fashion flatlay">
+            <figcaption><a href="#" target="_blank">New Arrivals</a></figcaption>
+          </figure>
+        </div>
+
+        <figure>
+          <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-R6mVhM7gh3UbGOqZR9EkHdqy/user-H6j9GpEw2cQjM2xZxUfsPfAi/img-2812f05b-3e5e-40e1-94c0-d3881147a08b-0.png?st=2025-10-19T20%3A15%3A00Z&se=2025-10-20T20%3A15%3A00Z&sp=r&sv=2022-11-02&sr=b&rscd=inline%3B%20filename%3Dtrendenza-showcase.png" alt="Trendenza model showcase">
+          <figcaption><a href="#" target="_blank">Explore the Collection</a></figcaption>
+        </figure>
+
+      </section>
+    </div>
+  </main>
+
+  <!-- Subscribe Section -->
+  <section aria-label="Subscribe example" class="subscribe">
+    <div class="container">
+      <article>
+        <hgroup>
+          <h2>Join the Trendenza Circle</h2>
+          <h3>Get the latest drops, trends, and exclusive deals</h3>
+        </hgroup>
+        <form class="grid">
+          <input type="text" id="firstname" name="firstname" placeholder="Your name" aria-label="First name" required />
+          <input type="email" id="email" name="email" placeholder="Your email" aria-label="Email" required />
+          <button type="submit" onclick="event.preventDefault()">Subscribe</button>
+        </form>
+      </article>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="container">
+    <small>
+      <a href="#">Privacy Policy</a> • 
+      <a href="#">Terms of Service</a>
+    </small>
+  </footer>
+
+</body>
+</html>
