@@ -1,129 +1,438 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Trendenza | Fashion for All</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-  <style>
-    body {
-      background-color: #fff;
-      color: #222;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-    header img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    .grid img {
-      width: 100%;
-      border-radius: 8px;
-    }
-    h2, h3 {
-      color: #222;
-    }
-    figure {
-      margin: 0;
-    }
-    nav ul li strong {
-      font-size: 1.5rem;
-      letter-spacing: 1px;
-    }
-    footer {
-      margin-top: 2rem;
-      text-align: center;
-      color: #777;
-    }
-    .subscribe {
-      text-align: center;
-      margin-top: 3rem;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Traffic Simulation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #1a1a2e 0%, #16213e 100%);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        canvas {
+            display: block;
+        }
+        .info {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 14px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .info h3 {
+            margin: 0 0 15px 0;
+            font-size: 18px;
+            color: #00d4ff;
+        }
+        .info div {
+            margin: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        .info .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #00ff88;
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.3; }
+        }
+        .controls {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0, 0, 0, 0.8);
+            padding: 15px 25px;
+            border-radius: 12px;
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
 </head>
-
 <body>
-
-  <!-- Navigation -->
-  <nav class="container-fluid">
-    <ul>
-      <li><strong>Trendenza</strong></li>
-    </ul>
-    <ul>
-      <li><a href="#">Men</a></li>
-      <li><a href="#">Women</a></li>
-      <li><a href="#">New Arrivals</a></li>
-      <li><a href="#" role="button">Shop Now</a></li>
-    </ul>
-  </nav>
-
-  <!-- Hero Section -->
-  <main class="container">
-    <div class="grid">
-      <section>
-        <hgroup>
-          <h2>Welcome to Trendenza</h2>
-          <h3>Where Modern Meets Classy</h3>
-        </hgroup>
-        <p>Explore a world of sleek, stylish, and trend-forward fashion — designed for confidence and individuality.</p>
-        <figure>
-          <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-R6mVhM7gh3UbGOqZR9EkHdqy/user-H6j9GpEw2cQjM2xZxUfsPfAi/img-6663d903-c3ac-4ab4-bb72-b36432495cba-0.png?st=2025-10-19T20%3A15%3A00Z&se=2025-10-20T20%3A15%3A00Z&sp=r&sv=2022-11-02&sr=b&rscd=inline%3B%20filename%3Dtrendenza-hero.png" alt="Trendenza fashion banner">
-          <figcaption><a href="#" target="_blank">Shop the Look</a></figcaption>
-        </figure>
-
-        <h3>Our Vision</h3>
-        <p>At Trendenza, we blend timeless elegance with bold, contemporary design. From everyday essentials to standout pieces, we bring comfort and sophistication to your wardrobe.</p>
-
-        <h3>Featured Collection</h3>
-        <p>Discover the latest looks for Men, Women, and New Arrivals — handpicked for the modern fashion enthusiast.</p>
-
-        <div class="grid">
-          <figure>
-            <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=800&q=80" alt="Men’s fashion outfit">
-            <figcaption><a href="#" target="_blank">Men’s Collection</a></figcaption>
-          </figure>
-          <figure>
-            <img src="https://images.unsplash.com/photo-1520974722078-364a43a1036e?auto=format&fit=crop&w=800&q=80" alt="Women’s fashion look">
-            <figcaption><a href="#" target="_blank">Women’s Collection</a></figcaption>
-          </figure>
-          <figure>
-            <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=800&q=80" alt="New arrivals fashion flatlay">
-            <figcaption><a href="#" target="_blank">New Arrivals</a></figcaption>
-          </figure>
-        </div>
-
-        <figure>
-          <img src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-R6mVhM7gh3UbGOqZR9EkHdqy/user-H6j9GpEw2cQjM2xZxUfsPfAi/img-2812f05b-3e5e-40e1-94c0-d3881147a08b-0.png?st=2025-10-19T20%3A15%3A00Z&se=2025-10-20T20%3A15%3A00Z&sp=r&sv=2022-11-02&sr=b&rscd=inline%3B%20filename%3Dtrendenza-showcase.png" alt="Trendenza model showcase">
-          <figcaption><a href="#" target="_blank">Explore the Collection</a></figcaption>
-        </figure>
-
-      </section>
+    <div class="info">
+        <h3>🚗 3D Traffic Simulation</h3>
+        <div><span class="dot"></span>Speed: 5 MPH</div>
+        <div><span class="dot"></span>Vehicles: <span id="carCount">0</span></div>
+        <div><span class="dot"></span>Time: <span id="time">Day</span></div>
     </div>
-  </main>
-
-  <!-- Subscribe Section -->
-  <section aria-label="Subscribe example" class="subscribe">
-    <div class="container">
-      <article>
-        <hgroup>
-          <h2>Join the Trendenza Circle</h2>
-          <h3>Get the latest drops, trends, and exclusive deals</h3>
-        </hgroup>
-        <form class="grid">
-          <input type="text" id="firstname" name="firstname" placeholder="Your name" aria-label="First name" required />
-          <input type="email" id="email" name="email" placeholder="Your email" aria-label="Email" required />
-          <button type="submit" onclick="event.preventDefault()">Subscribe</button>
-        </form>
-      </article>
+    <div class="controls">
+        🖱️ Left Click + Drag: Rotate | 🎯 Right Click + Drag: Pan | 🔄 Scroll: Zoom
     </div>
-  </section>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        let scene, camera, renderer;
+        let cars = [];
+        const SPEED_MPH = 5;
+        const SPEED = (SPEED_MPH * 1609.34) / 3600 * 0.02;
+        
+        // Camera controls
+        let isDragging = false;
+        let previousMousePosition = { x: 0, y: 0 };
+        let cameraAngle = 0;
+        let cameraHeight = 20;
+        let cameraDistance = 40;
+        let panX = 0, panZ = 0;
 
-  <!-- Footer -->
-  <footer class="container">
-    <small>
-      <a href="#">Privacy Policy</a> • 
-      <a href="#">Terms of Service</a>
-    </small>
-  </footer>
+        function init() {
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x1a1a2e);
+            scene.fog = new THREE.Fog(0x1a1a2e, 60, 150);
 
+            camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+            updateCameraPosition();
+
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            document.body.appendChild(renderer.domElement);
+
+            // Enhanced lighting
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.4);
+            scene.add(ambientLight);
+
+            const sunLight = new THREE.DirectionalLight(0xffffff, 0.8);
+            sunLight.position.set(50, 50, 30);
+            sunLight.castShadow = true;
+            sunLight.shadow.mapSize.width = 2048;
+            sunLight.shadow.mapSize.height = 2048;
+            sunLight.shadow.camera.near = 0.5;
+            sunLight.shadow.camera.far = 200;
+            sunLight.shadow.camera.left = -50;
+            sunLight.shadow.camera.right = 50;
+            sunLight.shadow.camera.top = 50;
+            sunLight.shadow.camera.bottom = -50;
+            scene.add(sunLight);
+
+            // Hemisphere light for better ambient
+            const hemiLight = new THREE.HemisphereLight(0x87CEEB, 0x444444, 0.6);
+            scene.add(hemiLight);
+
+            // Multi-lane highway
+            const roadWidth = 20;
+            const roadLength = 200;
+            const roadGeometry = new THREE.PlaneGeometry(roadWidth, roadLength);
+            const roadMaterial = new THREE.MeshStandardMaterial({ 
+                color: 0x1a1a1a,
+                roughness: 0.9,
+                metalness: 0.1
+            });
+            const road = new THREE.Mesh(roadGeometry, roadMaterial);
+            road.rotation.x = -Math.PI / 2;
+            road.receiveShadow = true;
+            scene.add(road);
+
+            // Road markings - center line
+            for (let i = -roadLength/2; i < roadLength/2; i += 8) {
+                const lineGeometry = new THREE.BoxGeometry(0.4, 0.15, 5);
+                const lineMaterial = new THREE.MeshStandardMaterial({ 
+                    color: 0xFFDD00,
+                    emissive: 0xFFDD00,
+                    emissiveIntensity: 0.3
+                });
+                const line = new THREE.Mesh(lineGeometry, lineMaterial);
+                line.position.set(0, 0.08, i);
+                scene.add(line);
+            }
+
+            // Lane dividers
+            [-5, 5].forEach(x => {
+                for (let i = -roadLength/2; i < roadLength/2; i += 6) {
+                    const lineGeometry = new THREE.BoxGeometry(0.3, 0.1, 3);
+                    const lineMaterial = new THREE.MeshStandardMaterial({ 
+                        color: 0xFFFFFF,
+                        emissive: 0xFFFFFF,
+                        emissiveIntensity: 0.2
+                    });
+                    const line = new THREE.Mesh(lineGeometry, lineMaterial);
+                    line.position.set(x, 0.06, i);
+                    scene.add(line);
+                }
+            });
+
+            // Road edges
+            [-roadWidth/2, roadWidth/2].forEach(x => {
+                const edgeGeometry = new THREE.BoxGeometry(0.5, 0.2, roadLength);
+                const edgeMaterial = new THREE.MeshStandardMaterial({ color: 0xFFFFFF });
+                const edge = new THREE.Mesh(edgeGeometry, edgeMaterial);
+                edge.position.set(x, 0.1, 0);
+                scene.add(edge);
+            });
+
+            // Ground
+            const groundGeometry = new THREE.PlaneGeometry(200, 200);
+            const groundMaterial = new THREE.MeshStandardMaterial({ 
+                color: 0x1a3a1a,
+                roughness: 0.95
+            });
+            const ground = new THREE.Mesh(groundGeometry, groundMaterial);
+            ground.rotation.x = -Math.PI / 2;
+            ground.position.y = -0.1;
+            ground.receiveShadow = true;
+            scene.add(ground);
+
+            // Street lights
+            for (let i = -80; i < 100; i += 30) {
+                [-12, 12].forEach(x => {
+                    createStreetLight(x, i);
+                });
+            }
+
+            // Buildings in background
+            createBuildings();
+
+            // Create diverse traffic
+            const colors = [0xff3333, 0x3333ff, 0xffff33, 0x33ff33, 0xff33ff, 0x33ffff, 0xff8833, 0x8833ff];
+            const lanes = [-7.5, -2.5, 2.5, 7.5];
+            
+            for (let i = 0; i < 12; i++) {
+                const lane = lanes[i % 4];
+                const color = colors[i % colors.length];
+                const startZ = -80 + (i * 15);
+                createCar(color, lane, startZ);
+            }
+
+            document.getElementById('carCount').textContent = cars.length;
+
+            setupControls();
+            window.addEventListener('resize', onWindowResize);
+        }
+
+        function createStreetLight(x, z) {
+            const poleGeometry = new THREE.CylinderGeometry(0.15, 0.15, 8);
+            const poleMaterial = new THREE.MeshStandardMaterial({ color: 0x333333 });
+            const pole = new THREE.Mesh(poleGeometry, poleMaterial);
+            pole.position.set(x, 4, z);
+            pole.castShadow = true;
+            scene.add(pole);
+
+            const lightGeometry = new THREE.SphereGeometry(0.5);
+            const lightMaterial = new THREE.MeshStandardMaterial({ 
+                color: 0xffaa00,
+                emissive: 0xffaa00,
+                emissiveIntensity: 1
+            });
+            const light = new THREE.Mesh(lightGeometry, lightMaterial);
+            light.position.set(x, 8, z);
+            scene.add(light);
+
+            const pointLight = new THREE.PointLight(0xffaa00, 0.5, 20);
+            pointLight.position.set(x, 8, z);
+            scene.add(pointLight);
+        }
+
+        function createBuildings() {
+            for (let i = 0; i < 15; i++) {
+                const height = 10 + Math.random() * 30;
+                const width = 5 + Math.random() * 5;
+                const depth = 5 + Math.random() * 5;
+                
+                const buildingGeometry = new THREE.BoxGeometry(width, height, depth);
+                const buildingMaterial = new THREE.MeshStandardMaterial({ 
+                    color: new THREE.Color().setHSL(0.6, 0.2, 0.2 + Math.random() * 0.2),
+                    roughness: 0.7,
+                    metalness: 0.3
+                });
+                const building = new THREE.Mesh(buildingGeometry, buildingMaterial);
+                
+                const side = Math.random() > 0.5 ? 1 : -1;
+                building.position.set(
+                    side * (25 + Math.random() * 30),
+                    height / 2,
+                    -60 + Math.random() * 120
+                );
+                building.castShadow = true;
+                building.receiveShadow = true;
+                scene.add(building);
+            }
+        }
+
+        function createCar(color, x, z) {
+            const carGroup = new THREE.Group();
+
+            // Main body
+            const bodyGeometry = new THREE.BoxGeometry(1.8, 1, 4);
+            const bodyMaterial = new THREE.MeshStandardMaterial({ 
+                color: color,
+                metalness: 0.7,
+                roughness: 0.3
+            });
+            const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
+            body.position.y = 0.8;
+            body.castShadow = true;
+            carGroup.add(body);
+
+            // Cabin
+            const cabinGeometry = new THREE.BoxGeometry(1.6, 0.9, 2);
+            const cabin = new THREE.Mesh(cabinGeometry, bodyMaterial);
+            cabin.position.y = 1.6;
+            cabin.position.z = -0.3;
+            cabin.castShadow = true;
+            carGroup.add(cabin);
+
+            // Windows
+            const windowMaterial = new THREE.MeshStandardMaterial({ 
+                color: 0x2a2a3a,
+                transparent: true,
+                opacity: 0.7,
+                metalness: 0.9,
+                roughness: 0.1
+            });
+            const windowGeometry = new THREE.BoxGeometry(1.55, 0.85, 1.95);
+            const windows = new THREE.Mesh(windowGeometry, windowMaterial);
+            windows.position.y = 1.6;
+            windows.position.z = -0.3;
+            carGroup.add(windows);
+
+            // Headlights
+            const headlightGeometry = new THREE.SphereGeometry(0.15);
+            const headlightMaterial = new THREE.MeshStandardMaterial({ 
+                color: 0xffffee,
+                emissive: 0xffffee,
+                emissiveIntensity: 0.8
+            });
+            [-0.6, 0.6].forEach(x => {
+                const headlight = new THREE.Mesh(headlightGeometry, headlightMaterial);
+                headlight.position.set(x, 0.6, 2.1);
+                carGroup.add(headlight);
+            });
+
+            // Wheels
+            const wheelGeometry = new THREE.CylinderGeometry(0.35, 0.35, 0.3, 16);
+            const wheelMaterial = new THREE.MeshStandardMaterial({ 
+                color: 0x0a0a0a,
+                roughness: 0.8
+            });
+            
+            const wheelPositions = [
+                [-1, 0.35, 1.3],
+                [1, 0.35, 1.3],
+                [-1, 0.35, -1.3],
+                [1, 0.35, -1.3]
+            ];
+
+            wheelPositions.forEach(pos => {
+                const wheel = new THREE.Mesh(wheelGeometry, wheelMaterial);
+                wheel.rotation.z = Math.PI / 2;
+                wheel.position.set(pos[0], pos[1], pos[2]);
+                wheel.castShadow = true;
+                carGroup.add(wheel);
+                
+                // Add rim
+                const rimGeometry = new THREE.CylinderGeometry(0.2, 0.2, 0.31, 16);
+                const rimMaterial = new THREE.MeshStandardMaterial({ 
+                    color: 0xcccccc,
+                    metalness: 0.9,
+                    roughness: 0.1
+                });
+                const rim = new THREE.Mesh(rimGeometry, rimMaterial);
+                rim.rotation.z = Math.PI / 2;
+                rim.position.set(pos[0], pos[1], pos[2]);
+                carGroup.add(rim);
+            });
+
+            carGroup.position.set(x, 0, z);
+            scene.add(carGroup);
+            
+            cars.push({
+                mesh: carGroup,
+                speed: SPEED * (0.9 + Math.random() * 0.2),
+                wheels: carGroup.children.filter(child => 
+                    child.geometry && child.geometry.type === 'CylinderGeometry'
+                )
+            });
+        }
+
+        function setupControls() {
+            renderer.domElement.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                previousMousePosition = { x: e.clientX, y: e.clientY };
+            });
+
+            renderer.domElement.addEventListener('mousemove', (e) => {
+                if (isDragging) {
+                    const deltaX = e.clientX - previousMousePosition.x;
+                    const deltaY = e.clientY - previousMousePosition.y;
+
+                    if (e.buttons === 1) { // Left click - rotate
+                        cameraAngle += deltaX * 0.005;
+                        cameraHeight -= deltaY * 0.1;
+                        cameraHeight = Math.max(5, Math.min(50, cameraHeight));
+                    } else if (e.buttons === 2) { // Right click - pan
+                        panX -= deltaX * 0.05;
+                        panZ -= deltaY * 0.05;
+                    }
+
+                    updateCameraPosition();
+                    previousMousePosition = { x: e.clientX, y: e.clientY };
+                }
+            });
+
+            renderer.domElement.addEventListener('mouseup', () => {
+                isDragging = false;
+            });
+
+            renderer.domElement.addEventListener('wheel', (e) => {
+                e.preventDefault();
+                cameraDistance += e.deltaY * 0.05;
+                cameraDistance = Math.max(15, Math.min(80, cameraDistance));
+                updateCameraPosition();
+            });
+
+            renderer.domElement.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+            });
+        }
+
+        function updateCameraPosition() {
+            camera.position.x = panX + Math.sin(cameraAngle) * cameraDistance;
+            camera.position.y = cameraHeight;
+            camera.position.z = panZ + Math.cos(cameraAngle) * cameraDistance;
+            camera.lookAt(panX, 0, panZ);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            cars.forEach(car => {
+                car.mesh.position.z += car.speed;
+
+                // Rotate wheels
+                car.wheels.forEach(wheel => {
+                    wheel.rotation.x += car.speed * 0.5;
+                });
+
+                if (car.mesh.position.z > 100) {
+                    car.mesh.position.z = -100;
+                }
+            });
+
+            renderer.render(scene, camera);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        init();
+        animate();
+    </script>
 </body>
 </html>
